@@ -1,6 +1,4 @@
 * {
-  padding:0;
-  margin:0;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -14,13 +12,13 @@
 }
 
 body {
+  /* to show top nav bar */
   padding-top: 70px;
-  position: relative;
 }
 
 h1 {
   font-size: 40px;
-  color: #F5A623;
+  color: #ff9900;
   line-height: 48px;
   display: inline;
 }
@@ -28,7 +26,7 @@ h1 {
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: #999999;
+  color: #003366;
   line-height: 29px;
   padding: 10px;
 }
@@ -43,7 +41,7 @@ h3 {
 h4 {
   font-weight: bold;
   font-size: 14px;
-  color: #4A4A4A;
+  color: #4a4a4a;
   line-height: 17px;
 }
 
@@ -52,7 +50,6 @@ h2, h3, h4, h5 {
   padding-left: 5%;
   padding-right: 5%;
 }
-
 
 .date-text {
   font-style: italic;
@@ -78,50 +75,49 @@ p {
 }
 
 a {
-  color: #1199C3;
+  color: #1199c3;
   text-decoration: none;
-  margin-top: 10px;
   display: block;
 }
 
 .welcome-message {
   font-style: italic;
   font-size: 18px;
-  color: #F3F3F3;
+  color: #f3f3f3;
   line-height: 28px;
 }
 
 #skillsH3 {
-  color: #F5AE23;
+  color: #ff9900;
   display: none;
 }
 
 .orange {
-  background-color: #F5AE23;
+  background-color: #ff9900;
 }
 
 .orange-text {
-  color: #F5AE23;
+  color: #ff9900;
 }
 
 .white-text {
   font-weight: bold;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .gray {
-  background-color: #F3F3F3;
+  background-color: #f3f3f3;
   padding-bottom: 10px;
   clear:both;
 }
 
-.dark-gray {
-  background-color: #4A4A4A;
+.dark-gray-blue {
+  background-color: #6699cc;
 }
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: #6699cc;
 }
 
 .flex-box {
@@ -158,7 +154,7 @@ img {
 /* Bar chart stuff */
 .chart div {
   font: 10px sans-serif;
-  background-color: #4A4A4A;
+  background-color: #4a4a4a;
   text-align: right;
   padding: 3px;
   margin: 1px;
@@ -173,6 +169,10 @@ span {
 
 #letsConnect {
   text-align: center;
+}
+
+#projects-list {
+  display: flex;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -197,6 +197,9 @@ span {
   .welcome-message {
     display: none;
   }
+  #projects-list {
+    display: block;
+  }
 }
 
 #map {
@@ -218,3 +221,4 @@ span {
     display: block;
   }
 }
+

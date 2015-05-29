@@ -9,7 +9,7 @@ var bio = {
 		"location": "Minsk, Belarus"
 	},
 	"biopic": "images/me2.jpg",
-	"welcomeMessage": "Welcome!",
+	"welcomeMessage": "Keep It Simple, Stupid!",
 	"skills": ["Python", "C++", "Android", "MongoDB", "MySQL", "PostgreSQL",
 			 "PyCharm", "Emacs", "AndroidStudio", "Git", "CVS", "Celery"],
 
@@ -38,7 +38,7 @@ var bio = {
 			$("#skills").append(s);
 		};
 	}
-}
+};
 
 var work = {
 	"jobs": [
@@ -149,29 +149,25 @@ var projects = {
 			"dates": 2014,
 			"description": "ClackBoard is a simple casual game. Tap on cell that is located near cell with" +
 							" the same color and they will dissapear. ",
-			"images": ["images/cb.png"
-						//"images/cb_home.png"
-			],
+			"images": ["images/cb.png"],
 			"url": "http://market.android.com/details?id=com.doandroid.clackboard"
 		},
 		{
 			"title": "BreakAlarm",
 			"dates": 2013,
 			"description": "Minimal countdown timer to control work flow. I realize that I work more " +
-							"productive if I make breaks each 45 minutes. Here is my implementation of" +
-							" promodo like timer. If you need to have brakes in other periods, please use " +
-							"program settings and modify timer period. Now application is very simple it " +
-							"just plays a sound and logs time when timer starts/stops/finishes",
-			"images": ["images/ba_clock.png"
-						//"images/ba_home.png"
-			],
+							"productive if I make breaks each 45 minutes.",
+			"images": ["images/ba_clock.png"],
 			"url": "http://market.android.com/details?id=com.doandroid.break_alarm"
 		}
 	],
 
 	"display": function() {
+
+		$("#projects").append(HTMLprojectsListStart);
+
 		for (prj_i in projects.projects) {
-			$("#projects").append(HTMLprojectStart);
+			$("#projects-list").append(HTMLprojectStart);
 
 			project_info = projects.projects[prj_i];
 
@@ -194,7 +190,8 @@ var education =
 			"location": "Minsk, Belarus",
 			"dates": 2003,
 			"degree": "Major in Informational Security and Artificial Intelligence",
-			"majors": ["MS of computer science", ]
+			"majors": ["MS of computer science", ],
+			"url": "http://www.bsuir.by/"
 		}
 	],
 
@@ -203,7 +200,8 @@ var education =
 			"title": "M101P MongoDB for Developers",
 			"school": "MongoDB University",
 			"date": 2014,
-			"url": "http://education.mongodb.com/downloads/certificates/636b5cdfd6e4489aaef246084937949c/Certificate.pdf"
+			"url": "https://university.mongodb.com/courses/M101P/about",
+			"certificate": "http://education.mongodb.com/downloads/certificates/636b5cdfd6e4489aaef246084937949c/Certificate.pdf"
      	}
 	],
 
@@ -213,7 +211,7 @@ var education =
 
 			var school_info = education.schools[s];
 
-			var school = HTMLschoolName.replace("%data%", school_info.name);
+			var school = HTMLschoolName.replace("%data%", school_info.name).replace("#", school_info.url);
 			school += HTMLschoolDegree.replace("%data%", school_info.degree);
 			school += HTMLschoolDates.replace("%data%", school_info.dates);
 			school += HTMLschoolLocation.replace("%data%", school_info.location);
@@ -229,10 +227,10 @@ var education =
 
 			var course_info = education.onlineCourses[oc];
 
-			var course = HTMLonlineTitle.replace("%data%", course_info.title);
+			var course = HTMLonlineTitle.replace("%data%", course_info.title).replace("#", course_info.url);
 			course += HTMLonlineSchool.replace("%data%", course_info.school);
 			course += HTMLonlineDates.replace("%data%", course_info.date);
-			course += HTMLonlineURL.replace("%data%", "Certificate").replace("#", course_info.url);
+			course += HTMLonlineURL.replace("%data%", "Certificate").replace("#", course_info.certificate);
 
 			$(".education-entry:last").append(course);
 		}
@@ -241,19 +239,12 @@ var education =
 
 function initGMap() {
 	$("#mapDiv").append(googleMap);
-}
+};
 
 bio.display();
 work.display();
 projects.display();
 education.display();
+
 initGMap();
 
-$('body').scrollspy({
-	target: '#navbar-main',
-	offset: 70
-});
-
-var shiftWindow = function() { scrollBy(0, -70) };
-if (location.hash) shiftWindow();
-window.addEventListener("hashchange", shiftWindow);

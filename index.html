@@ -44,7 +44,6 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
 
   <!-- More on helper.js in the class -->
   <script src="js/helper.js"></script>
-  <scritp src="js/init-bootstrap.js"></script>
   <!--
   Uncomment the <script> tag below when you're ready to add an interactive
   Google Map to your resume!
@@ -57,10 +56,19 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
 
   <!-- Naviation menu -->
   <nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
-    <div class="container-fluid">
-      <div>
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#main">Denis Moroz</a>
+      </div>
+
+      <div div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#main">Denis Moroz</a></li>
           <li><a href="#workExperience" class="active">Work experience</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#education">Education</a></li>
@@ -95,7 +103,7 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
     <div id="mapDiv">
       <h2>Where I've Lived and Worked</h2>
     </div>
-    <div id="letsConnect" class='dark-gray'>
+    <div id="letsConnect" class='dark-gray-blue'>
       <h2 class='orange center-text'>Let's Connect</h2>
         <ul id="footerContacts" class="flex-box">
       </ul>
@@ -108,7 +116,7 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   dynamically when this website, index.html, is opened.
   -->
   <script src="js/resumeBuilder.js"></script>
-
+  <script src="js/init-bootstrap.js"></script>
 
   <!--
   These scripts are written in JavaScript. You'll be breaking them down as part of
