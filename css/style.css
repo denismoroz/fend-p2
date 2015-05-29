@@ -1,12 +1,10 @@
-* {
-  font-family: 'Roboto', sans-serif;
-}
-
 .clearfix {
   overflow: auto;
 }
 
-.education-entry, .work-entry, .project-entry {
+.education-entry,
+.work-entry,
+.project-entry {
   padding-left: 5%;
   padding-right: 5%;
 }
@@ -14,11 +12,13 @@
 body {
   /* to show top nav bar */
   padding-top: 70px;
+  font-family: 'Roboto', sans-serif;
+
 }
 
 h1 {
   font-size: 40px;
-  color: #ff9900;
+  color: #f90;
   line-height: 48px;
   display: inline;
 }
@@ -26,7 +26,7 @@ h1 {
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: #003366;
+  color: #036;
   line-height: 29px;
   padding: 10px;
 }
@@ -34,7 +34,7 @@ h2 {
 h3 {
   font-style: italic;
   font-size: 20px;
-  color: #000000;
+  color: #000;
   line-height: 22px;
 }
 
@@ -45,7 +45,10 @@ h4 {
   line-height: 17px;
 }
 
-h2, h3, h4, h5 {
+h2,
+h3,
+h4,
+h5 {
   padding:10px;
   padding-left: 5%;
   padding-right: 5%;
@@ -54,7 +57,7 @@ h2, h3, h4, h5 {
 .date-text {
   font-style: italic;
   font-size: 14px;
-  color: #999999;
+  color: #999;
   line-height: 16px;
   float: left;
 }
@@ -62,7 +65,7 @@ h2, h3, h4, h5 {
 .location-text {
   font-style: italic;
   font-size: 14px;
-  color: #999999;
+  color: #999;
   line-height: 16px;
   float: right;
 
@@ -70,7 +73,7 @@ h2, h3, h4, h5 {
 
 p {
   font-size: 14px;
-  color: #333333;
+  color: #333;
   line-height: 21px;
 }
 
@@ -88,21 +91,21 @@ a {
 }
 
 #skillsH3 {
-  color: #ff9900;
+  color: #f90;
   display: none;
 }
 
 .orange {
-  background-color: #ff9900;
+  background-color: #f90;
 }
 
 .orange-text {
-  color: #ff9900;
+  color: #f90;
 }
 
 .white-text {
   font-weight: bold;
-  color: #ffffff;
+  color: #fff;
 }
 
 .gray {
@@ -112,12 +115,12 @@ a {
 }
 
 .dark-gray-blue {
-  background-color: #6699cc;
+  background-color: #69c;
 }
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #6699cc;
+  background-color: #69c;
 }
 
 .flex-box {
@@ -221,4 +224,3 @@ span {
     display: block;
   }
 }
-

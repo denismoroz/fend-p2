@@ -1,3 +1,5 @@
+"use strict";
+
 
 var bio = {
 	"name": "Denis Moroz",
@@ -33,7 +35,7 @@ var bio = {
 		$("#header").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage));
 
 		$("#header").append(HTMLskillsStart);
-		for (skill in  bio.skills) {
+		for (var skill in  bio.skills) {
 			var s = HTMLskills.replace("%data%", bio.skills[skill]);
 			$("#skills").append(s);
 		};
@@ -129,9 +131,9 @@ var work = {
 	],
 
 	"display": function() {
-		for(job in work.jobs) {
+		for(var job in work.jobs) {
 			$("#workExperience").append(HTMLworkStart);
-			job_info = work.jobs[job];
+			var job_info = work.jobs[job];
 			var experience = HTMLworkEmployer.replace("%data%", job_info.employer);
 			experience += HTMLworkTitle.replace("%data%", job_info.title);
 			experience += HTMLworkLocation.replace("%data%", job_info.location);
@@ -166,15 +168,15 @@ var projects = {
 
 		$("#projects").append(HTMLprojectsListStart);
 
-		for (prj_i in projects.projects) {
+		for (var prj_i in projects.projects) {
 			$("#projects-list").append(HTMLprojectStart);
 
-			project_info = projects.projects[prj_i];
+			var project_info = projects.projects[prj_i];
 
 			var p = HTMLprojectTitle.replace("%data%", project_info.title).replace("#", project_info.url);
 			p += HTMLprojectDates.replace("%data%", project_info.dates);
 			p += HTMLprojectDescription.replace("%data%", project_info.description);
-			for (image in project_info.images) {
+			for (var image in project_info.images) {
 				p += HTMLprojectImage.replace("%data%", project_info.images[image]);
 			}
 			$(".project-entry:last").append(p);
@@ -206,7 +208,7 @@ var education =
 	],
 
 	"display": function() {
-		for (s in education.schools) {
+		for (var s in education.schools) {
 			$("#education").append(HTMLschoolStart);
 
 			var school_info = education.schools[s];
@@ -222,7 +224,7 @@ var education =
 
 		$("#education").append(HTMLonlineClasses);
 
-		for (oc in education.onlineCourses) {
+		for (var oc in education.onlineCourses) {
 			$("#education").append(HTMLschoolStart);
 
 			var course_info = education.onlineCourses[oc];
@@ -247,4 +249,3 @@ projects.display();
 education.display();
 
 initGMap();
-
