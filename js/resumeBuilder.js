@@ -6,7 +6,6 @@ var bio = {
 		"mobile": "+375 29 637 9008",
 		"email": "moroz.denis@gmail.com",
 		"github": "https://github.com/denismoroz",
-		"twitter": "https://twitter.com/dis_frost",
 		"location": "Minsk, Belarus"
 	},
 	"biopic": "images/me2.jpg",
@@ -25,7 +24,6 @@ var bio = {
 		var contact_section = HTMLmobile.replace("%data%", contacts["mobile"]);
 		contact_section += HTMLemail.replace("%data%", contacts["email"]);
 		contact_section += HTMLgithub.replace("%data%", contacts["github"]);
-		contact_section += HTMLtwitter.replace("%data%", contacts["twitter"]);
 		contact_section += HTMLlocation.replace("%data%", contacts["location"]);
 
 		$("#topContacts").append(contact_section);
@@ -250,3 +248,12 @@ work.display();
 projects.display();
 education.display();
 initGMap();
+
+$('body').scrollspy({
+	target: '#navbar-main',
+	offset: 70
+});
+
+var shiftWindow = function() { scrollBy(0, -70) };
+if (location.hash) shiftWindow();
+window.addEventListener("hashchange", shiftWindow);

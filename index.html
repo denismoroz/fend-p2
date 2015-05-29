@@ -22,8 +22,9 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   <title>Resume</title>
 
   <!-- Load the page styles. -->
+  <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+  <link href="css/bootstrap-theme.css" rel="stylesheet" type="text/css">
   <link href="css/style.css" rel="stylesheet" type="text/css">
-
   <!--
   jQuery is a common JavaScript library for reading and making changes to the
   Document Object Model (DOM). The DOM is a tree that contains information
@@ -38,19 +39,39 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   you can't accomplish with vanilla (regular) JavaScript.
   -->
   <script src="js/jQuery.js"></script>
+  <script src="js/bootstrap.js"></script>
+
 
   <!-- More on helper.js in the class -->
   <script src="js/helper.js"></script>
-
+  <scritp src="js/init-bootstrap.js"></script>
   <!--
   Uncomment the <script> tag below when you're ready to add an interactive
   Google Map to your resume!
   -->
   <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body unresolved>
-  <div id="main">
+<body unresolved data-spy="scroll" data-target="#navbar-main">
+
+  <!-- Naviation menu -->
+  <nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+    <div class="container-fluid">
+      <div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#main">Denis Moroz</a></li>
+          <li><a href="#workExperience" class="active">Work experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#mapDiv">Where I've Lived and Worked</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="container" id="main">
     <!--
     Everything from here to the <script> tag below is the skeleton of your
     website. Your code will add information to each of the sections of the
@@ -60,6 +81,7 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
     <div id="header" class="center-content clearfix">
       <ul id="topContacts" class='flex-box'></ul>
     </div>
+
     <div style='clear: both;'></div>
     <div id="workExperience" class='gray'>
       <h2>Work Experience</h2>
