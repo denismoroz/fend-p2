@@ -147,6 +147,13 @@ var work = {
 var projects = {
 	"projects": [
 		{
+			"title": "WayHome",
+			"dates": 2015,
+			"description": 'How many time have you asked yourself where your friends or family are at the moment?',
+			"images": ["images/wh.png"],
+			"url": "https://play.google.com/store/apps/details?id=com.pdev7.wayhome"
+		},
+		{
 			"title": "ClackBoard",
 			"dates": 2014,
 			"description": "ClackBoard is a simple casual game. Tap on cell that is located near cell with" +
@@ -198,6 +205,13 @@ var education =
 	],
 
 	"onlineCourses": [
+		{
+			"title": "Front-End Web Developer Nanodegree",
+			"school": "Udacity",
+			"date": 2015,
+			"url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001",
+			"certificate": "http://denismoroz.github.io/resume/udacity-fend-2015.pdf"
+     	},
 		{
 			"title": "M101P MongoDB for Developers",
 			"school": "MongoDB University",
