@@ -148,7 +148,7 @@ var work = {
 var projects = {
 	"projects": [
 		{
-			"title": "Behaviour Cloning",
+			"title": "Behavioral Cloning",
 			"dates": 2017,
 			"description": 'Build a convolution neural network in Keras that predicts steering angles from images',
 			"images": ["images/bh.png"],
