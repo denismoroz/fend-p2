@@ -8,6 +8,7 @@ var bio = {
 		"mobile": "+375 29 637 9008",
 		"email": "moroz.denis@gmail.com",
 		"github": "https://github.com/denismoroz",
+		"linkedin": "https://www.linkedin.com/in/dmoroz",
 		"location": "Minsk, Belarus"
 	},
 	"biopic": "images/me2.jpg",
@@ -23,10 +24,10 @@ var bio = {
 		$("#header").prepend(formatedName);
 
 		var contacts = bio.contacts;
-		var contact_section = HTMLmobile.replace("%data%", contacts["mobile"]);
+		var contact_section =  HTMLLinkedIn.replace("%data%", contacts["linkedin"])
 		contact_section += HTMLemail.replace("%data%", contacts["email"]);
 		contact_section += HTMLgithub.replace("%data%", contacts["github"]);
-		contact_section += HTMLlocation.replace("%data%", contacts["location"]);
+		contact_section +=HTMLmobile.replace("%data%", contacts["mobile"]);
 
 		$("#topContacts").append(contact_section);
 		$("#footerContacts").append(contact_section);
@@ -147,8 +148,15 @@ var work = {
 var projects = {
 	"projects": [
 		{
+			"title": "Behaviour Cloning",
+			"dates": 2017,
+			"description": 'Build a convolution neural network in Keras that predicts steering angles from images',
+			"images": ["images/bh.png"],
+			"url": "https://github.com/denismoroz/carnd-p3-behavioral-cloning"
+		},
+		{
 			"title": "WayHome",
-			"dates": 2015,
+			"dates": 2016,
 			"description": 'How many time have you asked yourself where your friends or family are at the moment?',
 			"images": ["images/wh.png"],
 			"url": "https://play.google.com/store/apps/details?id=com.pdev7.wayhome"
@@ -161,14 +169,14 @@ var projects = {
 			"images": ["images/cb.png"],
 			"url": "http://market.android.com/details?id=com.doandroid.clackboard"
 		},
-		{
-			"title": "BreakAlarm",
-			"dates": 2013,
-			"description": "Minimal countdown timer to control work flow. I realize that I work more " +
-							"productive if I make breaks each 45 minutes.",
-			"images": ["images/ba_clock.png"],
-			"url": "http://market.android.com/details?id=com.doandroid.break_alarm"
-		}
+		// {
+		// 	"title": "BreakAlarm",
+		// 	"dates": 2013,
+		// 	"description": "Minimal countdown timer to control work flow. I realize that I work more " +
+		// 					"productive if I make breaks each 45 minutes.",
+		// 	"images": ["images/ba_clock.png"],
+		// 	"url": "http://market.android.com/details?id=com.doandroid.break_alarm"
+		// }
 	],
 
 	"display": function() {
@@ -205,6 +213,13 @@ var education =
 	],
 
 	"onlineCourses": [
+		{
+			"title": "Self-Driving Car Engineer",
+			"school": "Udacity",
+			"date": 2017,
+			"url": "https://www.udacity.com/drive",
+			"state": "In progress"
+     	},
 		{
 			"title": "Front-End Web Developer Nanodegree",
 			"school": "Udacity",
@@ -246,7 +261,13 @@ var education =
 			var course = HTMLonlineTitle.replace("%data%", course_info.title).replace("#", course_info.url);
 			course += HTMLonlineSchool.replace("%data%", course_info.school);
 			course += HTMLonlineDates.replace("%data%", course_info.date);
-			course += HTMLonlineURL.replace("%data%", "Certificate").replace("#", course_info.certificate);
+
+			if (course_info.certificate != undefined) {
+				course += HTMLonlineURL.replace("%data%", "Certificate").replace("#", course_info.certificate);
+			}
+			else {
+				course += HTMLonlineState.replace("%data%", course_info.state)
+			}
 
 			$(".education-entry:last").append(course);
 		}
